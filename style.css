@@ -1,0 +1,14 @@
+.screen-one{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-image: url(img/svadebnogo-foto.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wedding-one{
+    height: 100%;
+    background-image: linear-gradient(to bottom,rgba(224, 224, 224, 0.65),rgba(195, 195, 195, 0.65));
+}
