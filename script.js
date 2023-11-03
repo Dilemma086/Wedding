@@ -7,7 +7,7 @@ http.send()
 
 http.onload = function renderData(){
     let data = JSON.parse(this.responseText)
-        const wedding = new ScreenOne()
+        // const wedding = new ScreenOne()
         wedding.creat()
         wedding.append()
 }

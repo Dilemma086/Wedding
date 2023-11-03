@@ -1,18 +1,88 @@
-h1{
-    color: #e5b764;
+@font-face {
+    font-family: Aquarelle;
+    src: url(/fonts/Aquarelle.ttf);
 }
+@font-face {
+    font-family: ClassicaTwo;
+    src: url(/fonts/ClassicaTwo.ttf);
+}
+@font-face {
+    font-family: GoodVibesCyr;
+    src: url(/fonts/GoodVibesCyr.ttf);
+}
+@font-face {
+    font-family: Lora-Medium;
+    src: url(/fonts/Lora/Lora-MediumItalic.ttf);
+}
+@font-face {
+    font-family: Lora-Regular;
+    src: url(/fonts/Lora/Lora-Regular.ttf);
+}
+h1{
+    color: #a62966;
+    font-size: 80px;
+    text-transform: uppercase;
+    font-family: Lora-Regular;
+    margin-bottom: 0
+}
+h4{
+    color: #04719d;
+    font-size: 55px;
+    /* text-transform: uppercase; */
+    font-family: GoodVibesCyr;
+}
+
 .screen-one{
     height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    background-image: url(img/cadceadb50.png);
+    background-image: url(img/wMainGB.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .wedding-one{
+    position: relative;
     height: 100%;
     width: 100%;
-    background-image: radial-gradient(#1d4650,#0b1d27);
+    font-family: Lora-Regular;
+    color: #38768f;
+    /* background-image: radial-gradient(#ffffff,#d2d2d2); */
+}
+.paragraph{
+    font-size: 28px;
+}
+
+.wedding-one-block-1{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+}
+.wedding-one-img-1{
+    position: absolute;
+    width: 350px;
+    top: 35px;
+    left: 0;
+}
+.wedding-one-img-1 img,
+.wedding-one-img-2 img{
+    width: 30%;
+    object-fit: cover;	
+}
+.wedding-one-img-2{
+    position: absolute;
+    width: 300px;
+    height: 251px;
+    bottom: 0;
+    right: 0;
+}
+.wedding-one-block-1 span{
+    padding: 20px 35px;
+    color: #fff;
+    background-color: #a62966;
+    border-radius: 8px;
+    
 }
