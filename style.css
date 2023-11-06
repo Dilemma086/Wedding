@@ -18,29 +18,69 @@
     font-family: Lora-Regular;
     src: url(/fonts/Lora/Lora-Regular.ttf);
 }
+
+@media (max-width: 768px){
+    h1{
+        font-size: 25px!important;
+    }
+}
+main{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.screen-one,
+.screen-one-after,
+.screen-two,
+.screen-three,
+.screen-four,
+.screen-five{
+   
+    scroll-snap-align: start;
+    position: relative;
+    overflow-y: hidden;
+}
+ul{
+    padding-left: 0;
+}
+
+li{
+    list-style-type: none;
+}
 h1{
     color: #a62966;
     font-size: 80px;
     text-transform: uppercase;
     font-family: Lora-Regular;
-    margin-bottom: 0
-}
-h4{
-    color: #04719d;
-    font-size: 55px;
-    /* text-transform: uppercase; */
-    font-family: GoodVibesCyr;
+    margin-bottom: 0;
+    font-weight:100;
 }
 
+
 .screen-one{
-    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    background-image: url(img/wMainGB.jpg);
+    height: 100vh;
+    
+    
+    overflow: hidden;
+    
+}
+.screen-one:before{
+    content: '';
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+    background-image: url(img/dim.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity:0.1;
 }
 .wedding-one{
     position: relative;
@@ -48,41 +88,528 @@ h4{
     width: 100%;
     font-family: Lora-Regular;
     color: #38768f;
-    /* background-image: radial-gradient(#ffffff,#d2d2d2); */
+}
+.wedding-one h4{
+    font-family: GoodVibesCyr;
+    color: #38768f;
+    font-size: 35px;
+}
+.wedding-one span{
+    position: absolute;
+    bottom: 85px;
+    left: 0;
+    right: 0;
+    font-weight: 600;
+    color: #a62966;
+}
+.wedding-two{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url(img/wMainGB.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .paragraph{
     font-size: 28px;
 }
 
+/* левый блок   */
+.wedding-one h1{
+    position: relative;
+    z-index: 1;
+}
+.wedding-one-img-1 img{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 150px;
+    z-index: 1;
+}
+.wedding-one-img-2 img{
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 150px;
+    z-index: 1;
+}
+
+.wedding-one-img-3 img{
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    transform: scale(-1, 1);
+    width: 350px;
+    opacity: .5;
+    z-index: 1;
+}
 .wedding-one-block-1{
     position: absolute;
-    margin: auto;
+    height: 300px;
+    width: 380px;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 10%;
-}
-.wedding-one-img-1{
-    position: absolute;
-    width: 350px;
-    top: 35px;
-    left: 0;
-}
-.wedding-one-img-1 img,
-.wedding-one-img-2 img{
-    width: 30%;
-    object-fit: cover;	
-}
-.wedding-one-img-2{
-    position: absolute;
-    width: 300px;
-    height: 251px;
     bottom: 0;
-    right: 0;
+    margin: auto;
+}
+.wedding-one-block-1 h5{
+    font-size: 20px;
+}
+.wedding-one-block-1 p{
+    font-size: 20px;
+    font-family: Lora-Regular;
+    
 }
 .wedding-one-block-1 span{
     padding: 20px 35px;
     color: #fff;
     background-color: #a62966;
     border-radius: 8px;
+}
+
+.wedding-one{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url(img/wMainGB.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* правый блок */
+
+.wedding-two-img-1 img{
+    position: absolute;
+    top:0;
+    left: 10px;
+    width: 160px;;
     
+}
+.wedding-two-img-2 img{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 173px;
+    transform: scale(-1, 1);
+}
+.wedding-two-block-1{
+    position: relative;
+    z-index: 2;
+}
+.wedding-two-block-1 h4{
+    
+    color: #04719d;
+    font-size: 55px;
+    margin-bottom: 0;
+    font-family: GoodVibesCyr;
+}
+.wedding-two-block-1 span{
+    color: #a62966;
+    font-family: Lora-Regular;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+@media (max-width: 1200px) {
+    .wedding-one-block-1{
+        position: relative;
+    }
+    .wedding-one h1{
+        font-size: 55px;
+    }
+    .wedding-one-img-1 img {
+        width: 90px;
+    }    
+}
+@media (max-width: 768px){
+    .wedding-one h1,
+    .paragraph{
+        display: none;
+    }
+    .wedding-two-block-1 h4{
+        margin-top: 15px;
+        font-size: 35px;
+    }
+    .wedding-two-img-2{
+        display: none;
+    }
+    .wedding-one span{
+        bottom: 150px;
+    }
+    .classheader-one-img-1 img{
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 90px;
+        z-index: 1;
+    }
+    .classheader-one h1,
+    .classheader-one p{
+        position: relative;
+        z-index: 2;
+    }
+    .classheader-one h1{
+        font-size: 25px;
+        margin: 2px ;
+        
+    }
+    .classheader-one p{
+        font-size: 25px;
+        margin: 2px ;
+        font-size: 18px;
+        color: #04719d;
+    }
+    .screen-one{
+        flex-direction: column;
+    }
+    .wedding-two{
+        position: relative;
+        display: block;
+    }
+    .paragraph{
+        position: absolute;
+        
+        left: 0;
+        right: 0;
+        bottom: 1%;
+       
+        font-size: 20px;
+    }
+
+    .wedding-two{
+        background-image: none;
+    }
+    .wedding-two::before{
+        content: '';
+        position:absolute;
+        height: 100%;
+        width: 100%;
+        left:0;
+        top:0;
+        background-image: url(img/dim.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity:0.1;
+    }
+    .wedding-two-block-2{
+        display: block;
+    }
+    .wedding-one-block-1{
+        display: none;
+    }
+    /* .wedding-one-img-2,
+    .wedding-one-img-3{
+        display: none;
+    } */
+    .wedding-two-img-3 {
+        display: block;
+    }
+    .wedding-two-img-3 img{
+        
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        width: 150px;
+
+    }
+    .wedding-two-img-4{
+        display: block;
+    }
+    .wedding-two-img-4 img{
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        transform: scale(-1, 1);
+        width: 350px;
+        opacity: .5;
+
+    }
+ 
+    .wedding-two-block-2{
+        position: relative;
+        z-index: 1;
+        margin: 0 10%;
+        font-family: Lora-Regular;
+        color: #38768f;
+    }
+    .wedding-one-img-4{
+        display: block;
+
+    }
+    .wedding-one-img-4 img{
+        position: absolute;
+        top:35px;
+        right: 0;
+        width: 90px;
+        transform: scale(-1, 1);
+    }
+ 
+} 
+
+/* screen-one-after */
+.screen-one-after{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+}
+.screen-one-after h5{
+    margin-bottom: 10px;
+    color: #a62966;
+    font-size: 25px;
+    font-family: GoodVibesCyr;
+}
+.screen-one-after p{
+    color: #04719d;
+    font-size: 20px;
+    
+}
+.wedding-one-after-block-1{
+    position: absolute;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(img/dim.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity:0.3;
+}
+.wedding-one-after-block-2{
+    height: 100px;
+    margin-bottom: 25px;
+}
+.wedding-one-after-block-2 img{
+    height: 100%;
+}
+/* второй экран */
+.screen-two{
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(img/schelkovskiy1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+   
+}
+.block-two-one{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 10px;
+    background-image: linear-gradient(to bottom,rgba(226, 225, 225, 0.65),rgba(255, 255, 255, 0.95));
+}
+.block-two-one h1{
+    text-align: center;
+}
+.block-two-one h1,
+.block-two-one p{
+    position: relative;
+    z-index: 1;
+}
+.block-two-one p{
+    font-family: Lora-Regular;
+    color:  #a62966;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.block-two-one-img-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.block-two-one-img-3{
+    width: 90%;
+}
+.block-two-one-img-2{
+    position: absolute;
+    text-align: center;
+}
+.block-two-one-img-2 img{
+     width: 80%;
+     opacity: .4;
+}
+@media (max-width: 768px){
+    .block-two-one h1{
+        font-size: 25px;
+    }
+    .block-two-one p{
+        font-size: 18px;
+    }
+}
+
+/* блок screen-three */
+
+.screen-three{
+    height: 100vh;
+    text-align: center;
+    background-image: url(img/dim.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.block-three-one li{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.block-three-one li b{
+    display: block;
+  
+    color: #a62966;
+    font-size: 20px;
+}
+.block-three-one span img{
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+    padding-top: 12px;
+    
+}
+.block-three-one span{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #38768f;
+   
+}
+.block-three-one h4{
+    color: #04719d;
+    font-family: GoodVibesCyr;
+    font-size: 18px;
+}
+
+/* screen-four */
+.screen-four{
+    height: 50vh;
+    display: flex;
+
+}
+.block-four-one{
+    height: 100%;
+    width: 100%;
+    background-image: url(img/wWeTougeveGB.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+.block-four-one-1{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom,rgba(226, 225, 225, 0.65),rgba(255, 255, 255, 0.95));
+}
+.block-four-one-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.block-four-one-1 h4{
+    
+    color: #38768f;
+    font-size: 22px;
+}
+.block-four-one-1 ul{
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+.block-four-one-1 li{
+    width: 100px;
+    border-right: #38768f solid 1px;
+}
+.timer{
+    color: #38768f;
+}
+.day,
+.hour,
+.min,
+.sec{
+    color: #a62966;
+    font-size: 35px;
+}
+.timer ul li:nth-child(4){
+    border-right: none;
+}
+@media (max-width: 768px){
+    .screen-four{
+        flex-direction: column;
+    }
+ 
+}
+/* screen-five */
+.screen-five{
+    height: 100vh;
+    text-align: center;
+
+}
+
+.block-five-one-img {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+    overflow: hidden;
+    margin: auto;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+}
+.block-five-one-img img{
+    max-width: 100%;
+    height: 100%;
+    
+}
+.block-five-one{
+    position: absolute;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(img/dim.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.slider-1,
+.slider-2,
+.slider-3,
+.slider-4,
+.slider-5,
+.slider-6,
+.slider-7,
+.slider-8,
+.slider-9,
+.slider-10,
+.slider-11,
+.slider-12,
+.slider-13,
+.slider-14,
+.slider-15,
+.slider-16,
+.slider-17,
+.slider-18,
+.slider-19{
+    scroll-snap-align: start;
+    position: relative;
+    /* overflow-x: hidden; */
 }
