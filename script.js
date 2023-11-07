@@ -26,7 +26,7 @@ function onEntry(entry) {
     entry.forEach(change => {
       if (change.isIntersecting) {
     //    change.target.classList.add('element-show');
-    console.log(change.target)
+    
       }
     });
   }
@@ -38,3 +38,13 @@ function onEntry(entry) {
   for (let elm of elements) {
     observer.observe(elm);
   }
+  const blockFiveOneImg = document.querySelector('.block-five-one-img')
+  const arrFiveOneImg = Array.from(document.querySelectorAll('.block-five-one-img img'))
+  const elemFiveOneImg = document.createElement('div')
+  elemFiveOneImg.classList.add('block-five-one-indicat')
+  blockFiveOneImg.after(elemFiveOneImg)
+  const ul = document.createElement('ul')
+  elemFiveOneImg.append(ul)
+  arrFiveOneImg.forEach((item,i) => {
+    ul.append(document.createElement('li'))
+  })
