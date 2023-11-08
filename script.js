@@ -34,7 +34,7 @@ function onEntry(entry) {
   let options = {threshold: [0.5]};
   let observer = new IntersectionObserver(onEntry, options);
   let elements = document.querySelectorAll('section');
-  console.log(elements)
+  
   for (let elm of elements) {
     observer.observe(elm);
   }
@@ -45,6 +45,19 @@ function onEntry(entry) {
   blockFiveOneImg.after(elemFiveOneImg)
   const ul = document.createElement('ul')
   elemFiveOneImg.append(ul)
-  arrFiveOneImg.forEach((item,i) => {
-    ul.append(document.createElement('li'))
+  arrFiveOneImg.forEach(x => {
+      ul.append(document.createElement('li'))
   })
+  window.onload =() => {
+    let scrollBlockImg = 0
+  const li = Array.from(document.querySelectorAll('.block-five-one-indicat li'))
+  li[0].classList.add('li-active')
+  blockFiveOneImg.addEventListener('scroll', () => {
+    scrollBlockImg = blockFiveOneImg.scrollLeft
+    li.forEach(a => a.classList.remove('li-active'))
+    arrFiveOneImg.forEach((item, i) => {
+      scrollBlockImg >= item.clientWidth * i &&  scrollBlockImg < item.clientWidth * (i + 1) ? li[i].classList.add('li-active') : false
+    })
+    
+  })
+}

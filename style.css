@@ -35,8 +35,8 @@ main{
 .screen-two,
 .screen-three,
 .screen-four,
-.screen-five{
-   
+.screen-five,
+.screen-six{   
     scroll-snap-align: start;
     position: relative;
     overflow-y: hidden;
@@ -498,7 +498,7 @@ h1{
 
 /* screen-four */
 .screen-four{
-    height: 50vh;
+    height: 100vh;
     display: flex;
 
 }
@@ -567,7 +567,7 @@ h1{
     display: flex;
     align-items: center;
     width: 90%;
-    height: 65%;
+    height: 75%;
     overflow: hidden;
     margin: auto;
     scroll-snap-type: x mandatory;
@@ -576,7 +576,7 @@ h1{
 .block-five-one-img img{
     max-width: 100%;
     max-height: 100%;
-    
+    border-radius: 8px;
 }
 .block-five-one{
     position: absolute;
@@ -618,9 +618,60 @@ h1{
     justify-content: center;
 }
 .block-five-one-indicat li{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     margin-right: 7px;
     background-color: #38768f;
     border-radius: 50%;
+}
+.li-active{
+    background-color: #a62966!important;
+}
+/* screen-six */
+.screen-six{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(img/dim.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.screen-six h4{
+    color: #38768f;
+    font-size: 22px;
+}
+.form-control{
+    border: #a62966 solid 1px;
+    border-radius: 5px;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: block;
+    width: 250px;
+}
+.block-six-one{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.checkbox{
+    font-size: 20px;
+    display: block;
+    color: #38768f;
+}
+.sendmail{
+    background-color: #a62966;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 8px;
+    border:#862152  solid 1px;
+    margin-top: 25px;
+    cursor: pointer
+}
+.sendmail:hover{
+    background-color: #862152;
 }
