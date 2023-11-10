@@ -1,24 +1,46 @@
 
-Hi <?php echo htmlspecialchars($_POST['name']); ?>.
-You are <?php echo (int)$_POST['age']; ?> years old.
 
-    // $to = 'dilemma086@yandex.ru';
-    // $to = 'raskovaloves@gmail.com';
+<?php
 
-    // $subject = 'Заявка на участие в мероприятии';
-    // $headers = 'From: raskovaloves@gmail.com' . "\r\n" .
-    // 'Reply-To: raskovaloves@gmail.com' . "\r\n" .
-    // 'X-Mailer: PHP/' . phpversion();
+session_start();
+echo 'yes';
+ 
 
-    //     $name = $_POST['name'];
-    //     $secondname = $_POST['secondname'];
-        
+$to = 'raskovaloves@gmail.com';
+$subject = 'Приглашение на свадьбу"';
+$headers = 'From: info@0blick.ru' . "\r\n" .
+'Reply-To: admin@sovhospital.ru' . "\r\n" .
+'X-Mailer: PHP/' . phpversion().
+'Content-Type: text/html; charset=utf-8';
 
- 	// 	$message = "
+     $name = $_POST['name'];
+     $secondname = $_POST['secondname'];
 
-	//         Имя: ".$name."<br>
-	//         Фамилия : ".$secondname."<br>
-        	
-    //     ";
-    
-    // mail($to, $subject, $message, $headers)
+    if(!empty($_POST['1quest'])){
+       $torgestvo = 'торжество'
+    }
+    if(!empty($_POST['2quest'])){
+            $vecher = 'вечеринку'
+     }
+
+     $name = htmlspecialchars($name);
+     $secondname = htmlspecialchars($secondname);
+  
+     $name = urldecode($name);
+     $secondname = urldecode($secondname);
+     
+     
+     $name = trim($name);
+     $secondname = trim($secondname);
+     
+
+     $message =  
+ "Добрый день, Юлия и Евгений!
+ Поступил запрос на участие в мероприятии 30 декабря 2023 года.
+    Заявитель: ".$name." ".$secondname.".
+    Планирует прибыть на ".$torgestvo.",  а также на ".$vecher.".
+ ;
+
+ mail($to, $subject, $message, $headers);
+
+ ?>

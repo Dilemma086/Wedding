@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Приглашение на вечеринку, посвященную бракосочетанию | Юлия и Евгений</title>
 </head>
 <body>
@@ -117,7 +118,7 @@
             <div class="block-six-one">
                 <h1>Заявка на приглашение</h1>
                 <h4>Мы будем искренне рады видеть Вас на нашем мероприятии. Пожалуйста, заполните свои данные.</h4>
-                <form id="send.php" method="POST">
+                <form id="sendBlock" method="POST">
                     <input class='form-control' name='name' type='text' placeholder="Имя">
                     <input class='form-control' name='secondname' type='text' placeholder="Фамилия">
                     <span class="btn-screen-six">Добавить участника...</span>
@@ -125,14 +126,41 @@
                         <input class='form-control' name='name2' type='text' placeholder="Имя">
                         <input class='form-control' name='secondname2' type='text' placeholder="Фамилия">
                     </div>
-                    <span class='checkbox'><input  type="checkbox" name="1quest"> Прийду на регистрацию</span>
-                    <span class='checkbox'><input type="checkbox" name="2quest"> Прийду на вечеринку</span>
+                    <span class='checkbox'><input  type="checkbox" name="1quest" value="yes"> Прийду на регистрацию</span>
+                    <span class='checkbox'><input type="checkbox" name="2quest" value="yes"> Прийду на вечеринку</span>
                     
                     <input class="sendmail" type="submit" name="submit" value="Отправить заявку">
                 </form>
             </div>
         </section>
-    </main> 
+    </main>
+    <script>
+        $(document).ready(function(){
+            $("#sendBlock").submit(function(e) {
+            e.preventDefault() //устанавливаем событие отправки для формы с id=form
+                    var form_data = $(this).serialize(); //собераем все данные из формы
+                    $.ajax({
+                    type: 'POST', //Метод отправки
+                    url: 'send.php', //путь до php фаила отправителя
+                    data: form_data,
+                    success: function(data){ // сoбытиe пoслe удaчнoгo oбрaщeния к сeрвeру и пoлучeния oтвeтa
+                        if(data == 'yes'){
+                        console.log('Сообщение удачно отправлено на сервер');
+                        // {
+                        //     $('#your-block').fadeIn(500); // пoкaжeм eё тeкст
+                        //     $('#v_pediatr').hide();
+                        //     $('#your-block-error').hide();
+                        //     $('#s_v_pediatr')[0].reset();
+                        }
+                        else{
+                            // $('#your-block-error').fadeIn(500); // пoкaжeм eё тeкст
+                            console.log('Возникла проблема при отправке');
+                        }
+                    }
+                    });
+            });
+        }); 
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

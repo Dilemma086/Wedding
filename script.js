@@ -67,6 +67,5 @@ document.querySelector('.btn-screen-six').addEventListener('click',()=>{
   document.querySelector('.btn-screen-six').hidden = true
 })
 
-// document.querySelector('.sendmail').addEventListener('click', (e) =>{
-//     e.preventDefault()
-// })
+
+   
