@@ -117,10 +117,14 @@
             <div class="block-six-one">
                 <h1>Заявка на приглашение</h1>
                 <h4>Мы будем искренне рады видеть Вас на нашем мероприятии. Пожалуйста, заполните свои данные.</h4>
-                <form id="webpostsend" method="post">
+                <form id="send.php" method="POST">
                     <input class='form-control' name='name' type='text' placeholder="Имя">
                     <input class='form-control' name='secondname' type='text' placeholder="Фамилия">
-                    <button class="btn">Добавить участника...</button>
+                    <span class="btn-screen-six">Добавить участника...</span>
+                    <div class="duble-block" hidden="true">
+                        <input class='form-control' name='name2' type='text' placeholder="Имя">
+                        <input class='form-control' name='secondname2' type='text' placeholder="Фамилия">
+                    </div>
                     <span class='checkbox'><input  type="checkbox" name="1quest"> Прийду на регистрацию</span>
                     <span class='checkbox'><input type="checkbox" name="2quest"> Прийду на вечеринку</span>
                     

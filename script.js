@@ -61,3 +61,12 @@ function onEntry(entry) {
     
   })
 }
+
+document.querySelector('.btn-screen-six').addEventListener('click',()=>{
+  document.querySelector('.duble-block').hidden = false
+  document.querySelector('.btn-screen-six').hidden = true
+})
+
+// document.querySelector('.sendmail').addEventListener('click', (e) =>{
+//     e.preventDefault()
+// })
