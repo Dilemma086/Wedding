@@ -53,8 +53,9 @@ h1{
     font-size: 80px;
     text-transform: uppercase;
     font-family: Lora-Regular;
-    margin-bottom: 0;
+    margin: 0;
     font-weight:100;
+    padding-top: 25px;
 }
 
 h3{
@@ -66,7 +67,7 @@ h3{
     height: 100vh;
     overflow: hidden;
 }
-.screen-one:before{
+/* .screen-one:before{
     content: '';
     position:absolute;
     height: 100%;
@@ -78,18 +79,19 @@ h3{
     background-repeat: no-repeat;
     background-size: cover;
     opacity:0.1;
-}
-.wedding-one{
+} */
+.classheader-one{
     position: relative;
     height: 100%;
     width: 100%;
     font-family: Lora-Regular;
     color: #38768f;
 }
-.wedding-one h4{
+.classheader-one h4{
     font-family: GoodVibesCyr;
     color: #38768f;
     font-size: 35px;
+    position: relative;
 }
 .wedding-one span{
     position: absolute;
@@ -101,7 +103,7 @@ h3{
     background: #fff;
     padding: 5px 0;
 }
-.wedding-two{
+.classheader-one{
     position: relative;
     height: 100%;
     width: 100%;
@@ -183,7 +185,7 @@ h3{
 
 .wedding-two-img-1 img{
     position: absolute;
-    top:0;
+    top: 100px;
     left: 10px;
     width: 160px;;
     
@@ -212,7 +214,18 @@ h3{
     font-weight: 600;
     font-size: 22px;
 }
-
+.classheader-two{
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    font-weight: 600;
+    font-size: 20px;
+    background-color: #fff;
+  
+    margin: auto;
+    width: 200px;
+}
 @media (max-width: 1200px) {
     .wedding-one-block-1{
         position: relative;
@@ -627,7 +640,7 @@ h3{
 }
 /* screen-six */
 .screen-six{
-    display: flex;
+    display: none;
     justify-content: center;
     height: 100vh;
     background-image: url(img/dim.png);

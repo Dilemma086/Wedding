@@ -15,13 +15,18 @@ $headers = 'From: info@0blick.ru' . "\r\n" .
 
      $name = $_POST['name'];
      $secondname = $_POST['secondname'];
+     $questone = $_POST['questone']
+   //   $questtwo = $_POST['questtwo']
 
-    if(!empty($_POST['1quest'])){
-       $torgestvo = 'торжество'
+    if(!empty($_POST['questone'])){
+       $torgestvo = "торжество"
     }
-    if(!empty($_POST['2quest'])){
-            $vecher = 'вечеринку'
-     }
+    else{
+      echo 'no'
+    }
+   //  if(!empty($_POST['questtwo'])){
+   //          $vecher = "вечеринку"
+   //   }
 
      $name = htmlspecialchars($name);
      $secondname = htmlspecialchars($secondname);
@@ -38,8 +43,7 @@ $headers = 'From: info@0blick.ru' . "\r\n" .
  "Добрый день, Юлия и Евгений!
  Поступил запрос на участие в мероприятии 30 декабря 2023 года.
     Заявитель: ".$name." ".$secondname.".
-    Планирует прибыть на ".$torgestvo.",  а также на ".$vecher.".
- ;
+    Планирует прибыть на ".$questone.",  а также на ".$vecher.".";
 
  mail($to, $subject, $message, $headers);
 
