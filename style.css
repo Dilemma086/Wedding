@@ -36,7 +36,8 @@ main{
 .screen-three,
 .screen-four,
 .screen-five,
-.screen-six{   
+.screen-six,
+.screen-seven,.screen-eight{   
     scroll-snap-align: start;
     position: relative;
     overflow-y: hidden;
@@ -699,4 +700,36 @@ h3{
 }
 .btn-screen-six:hover{
     background-color: #04719d;
+}
+/* screen-seven */
+.screen-seven{
+    height: 100vh;
+    text-align: center;
+    background-image: url(img/muz2023.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.block-seven-one{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom,rgba(226, 225, 225, 0.65),rgba(255, 255, 255, 0.95));
+}
+/* screen-eight */
+.screen-eight{
+
+    height: 50vh;
+    background-image: url(img/dim.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.block-eight-one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom,rgba(226, 225, 225, 0.65),rgba(255, 255, 255, 0.95));
 }
